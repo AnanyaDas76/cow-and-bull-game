@@ -1,0 +1,31 @@
+
+# cow and bull
+import random
+
+sys_gen = str(random.randint(1000, 10000))
+print(sys_gen)
+# user_resp = input("please enter a four digit number: ")
+
+cow = 0
+bull = 0
+guess = 0
+
+while True:
+    user_resp = input("please enter a four digit number: ")
+    if user_resp == sys_gen:
+        cow += 4
+        guess += 1
+        print("You Won..Game ends")
+        break
+    for i in range(0,4):
+        for j in range (0,4):
+            if user_resp[i] == sys_gen [j] and i == j:
+                 cow += 1
+            elif user_resp[i] == sys_gen[j] and i != j:
+                 bull += 1
+    guess += 1
+    print("all did not match, Try Again")
+print("cow = " + str(cow), "bull = " + str(bull), "guess = " +str(guess))
+
+
+
